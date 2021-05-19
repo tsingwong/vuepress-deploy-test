@@ -26,7 +26,7 @@ jobs:
           npm run docs:build
 
       - name: Push
-        run： |
+        run: |
           cd docs/.vuepress/dist
           git init
           git add -A
