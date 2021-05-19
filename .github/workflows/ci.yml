@@ -10,6 +10,10 @@ jobs:
       matrix:
         os: [macOS-latest, ubuntu-latest, windows-latest]
 
+    steps:
+    - name: Clone repository
+      uses: actions/checkout@v2
+
     - name: Build and Deploy
       uses: tsingwong/vuepress-deploy-test@master
       env:
