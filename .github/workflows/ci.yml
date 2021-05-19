@@ -1,0 +1,19 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  build:
+  name: ${{ matrix.kind }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macOS-latest, ubuntu-latest, windows-latest]
+
+    - name: Build and Deploy
+      uses: tsingwong/vuepress-deploy-test@master
+      env:
+        TARGET_REPO: tsingwong/vuepress-deploy-test
+        TARGET_BRANCH: gh_pages
+        BUILD_SCRIPT: yarn && yarn build
+        BUILD_DIR: doc/.vuepress/dist/
