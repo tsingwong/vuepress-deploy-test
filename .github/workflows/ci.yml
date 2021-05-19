@@ -22,7 +22,7 @@ jobs:
 
       - name: NPM step
         run: |
-          npm Install
+          npm install
           npm run docs:build
 
       - name: Push
