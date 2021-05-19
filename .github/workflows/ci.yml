@@ -31,8 +31,8 @@ jobs:
           git config --local user.email "tsingwoong@163.com"
           git config --local user.name "tsingwong"
           git init
-          git branch -m master
+          git branch -m main
           git add -A
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -m "update by github action"
-          git push -f master:gh-pages
+          git push -f main:gh-pages
