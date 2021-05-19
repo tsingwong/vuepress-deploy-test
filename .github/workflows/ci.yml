@@ -28,11 +28,10 @@ jobs:
       - name: Push
         run: |
           cd docs/.vuepress/dist
-          git init
-          git add -A
           git config --local user.email "tsingwoong@163.com"
           git config --local user.name "tsingwong"
+          git init
+          git add -A
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git add .
           git commit -m "update by github action"
           git push -f master:gh-pages
